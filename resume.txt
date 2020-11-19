@@ -1,0 +1,11 @@
+Votre défi est de concevoir cette application de suivi des adresses IP et de la rendre aussi proche que possible du design. Pour obtenir la localisation des adresses IP, vous utiliserez l'API de géolocalisation IP d'IPify. Pour générer la carte, nous vous recommandons d'utiliser LeafletJS.
+
+Vous pouvez utiliser tous les outils que vous souhaitez pour vous aider à relever le défi. Donc si vous avez quelque chose que vous souhaitez pratiquer, n'hésitez pas à essayer.
+
+Vos utilisateurs devraient pouvoir le faire :
+
+visualiser la mise en page optimale pour chaque page en fonction de la taille de l'écran de leur appareil
+Voir les états de survol pour tous les éléments interactifs sur la page
+Voir leur propre adresse IP sur la carte lors du chargement initial de la page
+Recherchez des adresses IP ou des domaines et consultez les informations clés et l'emplacement
+Vous voulez un soutien pour relever le défi ? Rejoignez notre communauté Slack et posez vos questions dans le canal d'aide.
