@@ -67,6 +67,8 @@ buttonSubmit.addEventListener('click', (e) => {
   }
 });
 
+window.addEventListener('load', buttonSubmit.click());
+
 // MAP CARTE
 mapboxgl.accessToken =
   'pk.eyJ1IjoibWpkaW9wMTAiLCJhIjoiY2tobmM2c3J6MHBjYTMxcm5kaGM1anAxciJ9.47xvhDL_Q8h8F826PqFTWw';
@@ -74,5 +76,3 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
 });
-
-window.addEventListener('load', buttonSubmit.click());
