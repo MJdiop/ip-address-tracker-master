@@ -15,6 +15,13 @@ const buttonSubmit = document.querySelector('#send');
 
 const inputIP = document.querySelector('#text-input');
 
+const loder = () => {
+  dataIp.innerHTML = '<img src="images/giphy.gif" height="92" />';
+  dataLocReg.innerHTML = '<img src="images/giphy.gif" height="92" />';
+  dataTimeZone.innerHTML = '<img src="images/giphy.gif" height="92" />';
+  dataIsp.innerHTML = '<img src="images/giphy.gif" height="92" />';
+};
+
 const fetchUrl = () => {
   fetch(URL)
     .then((res) => res.json())
@@ -54,6 +61,8 @@ const fetchUrl = () => {
 buttonSubmit.addEventListener('click', (e) => {
   e.preventDefault();
   // defaultIP = '8.8.8.8';
+
+  loder();
 
   if (inputIP.value === null) {
     URL = `https://geo.ipify.org/api/v1?apiKey=${API_KEY}&ipAddress=${defaultIP}`;
