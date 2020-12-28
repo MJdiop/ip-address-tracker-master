@@ -4,8 +4,6 @@ console.log(`It's Working !!!`);
 AOS.init();
 
 const API_KEY = 'at_pOcNiOF4d3DcBQwrnEe3SR2sNenG3';
-// const DEFAULT_IP = '216.58.201.131';
-// const URL = `https://geo.ipify.org/api/v1?apiKey=${API_KEY}&ipAddress=${IP}`;
 
 const dataIp = document.querySelector('#data-ip');
 const dataLocReg = document.querySelector('#data-loc-reg');
@@ -34,6 +32,27 @@ const fetchUrl = () => {
         dataTimeZone.textContent = data.location.timezone;
         dataISP = dataIsp.textContent = data.isp;
 
+        // MAP CARTE
+        mapboxgl.accessToken =
+          'pk.eyJ1IjoibWpkaW9wMTAiLCJhIjoiY2tobmM2c3J6MHBjYTMxcm5kaGM1anAxciJ9.47xvhDL_Q8h8F826PqFTWw';
+
+        let map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v11',
+          zoom: 11,
+          center: [data.location.lng, data.location.lat],
+        });
+
+        let marker = new mapboxgl.Marker({
+          color: '#FF2c2c2',
+        })
+          .setLngLat([data.location.lng, data.location.lat])
+          .setPopup(
+            new mapboxgl.Popup().setHTML(`<h2>${data.location.region}!</h2>`)
+          )
+          .addTo(map);
+        // marker.togglePopup();
+
         if (dataISP.length > 15) {
           dataIsp.style.fontSize = '16px';
         }
@@ -60,7 +79,6 @@ const fetchUrl = () => {
 
 buttonSubmit.addEventListener('click', (e) => {
   e.preventDefault();
-  // defaultIP = '8.8.8.8';
 
   loder();
 
@@ -77,11 +95,3 @@ buttonSubmit.addEventListener('click', (e) => {
 });
 
 window.addEventListener('load', buttonSubmit.click());
-
-// MAP CARTE
-mapboxgl.accessToken =
-  'pk.eyJ1IjoibWpkaW9wMTAiLCJhIjoiY2tobmM2c3J6MHBjYTMxcm5kaGM1anAxciJ9.47xvhDL_Q8h8F826PqFTWw';
-var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
-});
