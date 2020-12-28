@@ -48,7 +48,9 @@ const fetchUrl = () => {
         })
           .setLngLat([data.location.lng, data.location.lat])
           .setPopup(
-            new mapboxgl.Popup().setHTML(`<h2>${data.location.region}!</h2>`)
+            new mapboxgl.Popup().setHTML(
+              `<h2>${data.location.region} ${data.location.country} !</h2>`
+            )
           )
           .addTo(map);
         // marker.togglePopup();
